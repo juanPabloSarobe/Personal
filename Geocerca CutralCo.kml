@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>Geocerca CutralCo.kml</name>
+	<StyleMap id="m_ylw-pushpin">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#s_ylw-pushpin</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#s_ylw-pushpin_hl</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="s_ylw-pushpin">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<PolyStyle>
+			<color>80ffffff</color>
+		</PolyStyle>
+	</Style>
+	<Style id="s_ylw-pushpin_hl">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<PolyStyle>
+			<color>80ffffff</color>
+		</PolyStyle>
+	</Style>
+	<Placemark>
+		<name>Geocerca CutralCo</name>
+		<styleUrl>#m_ylw-pushpin</styleUrl>
+		<Polygon>
+			<tessellate>1</tessellate>
+			<outerBoundaryIs>
+				<LinearRing>
+					<coordinates>
+						-69.28362082557921,-38.92410428973224,0 -69.28128757464296,-38.93636921974088,0 -69.26712538259015,-38.93436888497561,0 -69.26680059028826,-38.93530072988779,0 -69.28111348267973,-38.93724635996301,0 -69.27835017890007,-38.9494431121251,0 -69.23874364749983,-38.9706828322394,0 -69.19997272686524,-38.9659717287573,0 -69.19829245047688,-38.96141132864922,0 -69.19741480241322,-38.95469931475945,0 -69.1965361337261,-38.9450049445465,0 -69.19493356964564,-38.94485679224784,0 -69.1957817705091,-38.9545613795619,0 -69.18158567571386,-38.95606542522237,0 -69.14645401800091,-38.95746072705077,0 -69.14062486052761,-38.94477697107438,0 -69.15284927189194,-38.93765578240023,0 -69.1674239256225,-38.93328899306898,0 -69.16740605894134,-38.93169537782652,0 -69.15265175922055,-38.93609639566053,0 -69.13921299717271,-38.94339868612215,0 -69.13525023801255,-38.93581820240924,0 -69.14368504322314,-38.92974011848138,0 -69.17220035115844,-38.91732990151876,0 -69.19361277875198,-38.91818960694506,0 -69.19450314781471,-38.91685964008577,0 -69.19540130080698,-38.91435983601502,0 -69.21194623981322,-38.91563055099864,0 -69.22720224275791,-38.91994022583139,0 -69.27173757019339,-38.9203470424356,0 -69.28362082557921,-38.92410428973224,0 
+					</coordinates>
+				</LinearRing>
+			</outerBoundaryIs>
+		</Polygon>
+		<atom:link rel="app" href="https://www.google.com/earth/about/versions/#earth-pro" title="Google Earth Pro 7.3.6.10201"></atom:link>
+	</Placemark>
+</Document>
+</kml>
