@@ -1,3 +1,56 @@
+Como integrar Xubio a tu sistema
+1. Lo primero es dar de alta tu App Cliente
+Para dar de alta tu App Cliente tenes que acceder a: API de Xubio
+Al crear tu App Cliente obtendrás un client-id y un secret-id, mediante los cuales tendrás acceso a tu empresa a través de los recursos de la API.
+
+2. Lo segundo es obtener un access_token válido
+Para obtener un access_token válido tenés que hacer un request a: https://xubio.com/API/1.1/TokenEndpoint
+
+Ejemplo usando curl:
+curl -X POST -H "Content-Type: application/x-www-form-urlencoded" -d 'grant_type=client_credentials' --user TU_CLIENT_ID:TU_SECRET_ID https://xubio.com/API/1.1/TokenEndpoint
+
+El response será un JSON con el access_token:
+{"scope":"","expires_in":"3600","token_type":"Bearer","access_token":"TU_ACCESS_TOKEN"}
+El periódo de vida del token son 3600 segundos. En la implementación hay dos caminos: volver a pedir un token luego de expirado, para esto hay que verificar la respuesta del recurso que se intenta utilizar(por ej. factura de venta). La otra opción es antes de usar cualquier recurso, siempre solicitar un token previamente.
+
+3. Lo tercero es usar ese access_token para acceder a algún recurso
+Esto va a depender del recurso que quieras usar, pero en general tenés que pasar el access_token en el header del request de la siguiente manera:
+"Authorization: Bearer TU_ACCESS_TOKEN"
+
+Ejemplo usando curl:
+curl -X GET --header "Accept: application/json" --header "Authorization: Bearer TU_ACCESS_TOKEN" "https://xubio.com/API/1.1/clienteBean"
+
+4. Lo cuarto es contemplar que el access_token puede resultar inválido
+Cuando el access_token deje de ser válido el response tendrá el siguiente error:
+{"error":"invalid_token","error_description":"token died"}
+En este caso deberá volver al paso dos y obtener un nuevo token.
+
+Cómo utilizar Recursos de la API desde esta documentación
+Esta documentación te permite interactuar con los recursos de nuestra API, utilizando tu client-id y tu secret-id.
+IMPORTANTE: Se debe tener en cuenta que los cambios impactarán sobre la empresa del token, o sea que si eliminas un Cliente, ese cliente se eliminará realmente de la empresa.
+
+1. Lo primero es dar de alta tu App Cliente
+(si ya tenes un client-id y un secret-id omitir este paso)
+Para dar de alta tu App Cliente tenes que acceder a: API de Xubio
+Al crear tu App Cliente obtendrás un client-id y un secret-id, mediante los cuales tendrás acceso a tu empresa a través de los recursos de la API.
+
+2. Lo segundo es obtener un Token
+En la sección Recursos de la API tenes que hacer clic en el boton Autorizar, el cual abrirá un formulario donde deberás completar los campos CLIENT ID y SECRET ID con los datos obtenidos y hacer clic en "Autorizar", si el token fue obtenido correctamente, podrá cerrar el formulario.
+
+3. Lo tercero es probar los recursos
+Seleccioná un recurso listado en API REFERENCE y precioná "Pruébalo", completá los campos que sean requeridos y luego haz clic en "Ejecutar" para realizar la petición correspondiente al servidor. Puedes volver a ejectuar nuevamente la petición o hacer clic en "Limpiar" para realizar otra petición con nuevos campos.
+
+Xubio API
+ 1.1 
+OAS 2.0
+[ Base URL: xubio.com:443/API/1.1 ]
+/API/1.1/swagger.json
+Si quieres saber como integrar la API de Xubio a tu sistema te invitamos a leer Como integrar Xubio a tu sistema.
+Esta documentación te permite interactuar con nuestra API, utilizando tu client-id y tu secret-id, para utilizarla correctamente te sugerimos leer Como utilizar Xubio Documentation API
+
+
+
+
 {
     "swagger": "2.0",
     "info": {
